@@ -1,2 +1,214 @@
-# XHS-Stance-An-Intelligent-Social-Media-Opinion-Analysis-System
-XHS-Stance is a deep-learning-based system for multi-dimensional stance detection and emotion evolution modeling on Xiaohongshu social media, designed to analyze public opinion dynamics from large-scale user comments.
+XHS-Stance
+面向小红书社交媒体的多维舆情立场分析与情绪演化建模系统
+🧠 项目简介
+
+XHS-Stance 是一个面向 小红书（Xiaohongshu）社交媒体 的智能舆情分析系统，用于对用户评论进行 多维立场识别与情绪演化建模。
+
+系统可以自动从大规模评论中识别：
+
+用户对某一话题的 立场（支持 / 反对 / 中立）
+
+用户的 情绪极性与强度
+
+群体舆论与情绪随时间的 演化趋势
+
+该系统旨在为 社会舆情分析、公共情绪监测与社会计算研究 提供一个可落地的技术框架。
+
+🎯 项目意义
+
+传统的评论分析通常只做 情感分类（正面 / 负面），
+但在真实社会中：
+
+情绪 ≠ 立场
+
+例如，一个人可能情绪愤怒，但依然支持某一政策；
+也可能语气平和，却明确反对某一事件。
+
+因此，本项目引入 多维舆情建模框架，同时分析：
+
+立场（Stance） → 用户站在哪一边
+
+情绪（Emotion） → 用户感受有多强烈
+
+时间（Time） → 舆论如何随事件演变
+
+从而构建更真实、更可解释的 群体舆论画像。
+
+🧩 系统架构
+
+系统采用流水线式架构：
+
+小红书评论数据
+        ↓
+数据清洗与标准化
+        ↓
+立场识别模型
+        ↓
+情绪分析模型
+        ↓
+地区与时间聚合
+        ↓
+舆情与情绪演化建模
+        ↓
+结果导出与可视化
+
+
+各模块可独立升级，支持模型替换与扩展。
+
+🔍 核心功能
+1️⃣ 立场识别（Stance Detection）
+
+将每条评论自动分类为：
+
+支持（Support）
+
+反对（Oppose）
+
+中立（Neutral）
+
+用于刻画群体对某一话题的真实态度结构。
+
+2️⃣ 情绪分析（Emotion Analysis）
+
+对评论提取：
+
+情绪极性（正 / 负）
+
+情绪置信度
+
+情绪强度分布
+
+用于识别：
+
+情绪爆发
+
+舆论激化
+
+潜在冲突区域
+
+3️⃣ 舆情聚合分析
+
+基于：
+
+话题
+
+时间
+
+IP 地区
+
+对评论进行聚合，得到：
+
+不同地区的立场分布
+
+群体情绪对比
+
+舆论结构变化
+
+4️⃣ 情绪与舆情演化建模
+
+通过时间序列建模：
+
+追踪情绪随事件发展的变化
+
+识别舆论拐点
+
+分析极化趋势
+
+用于研究：
+
+社会情绪波动
+
+舆论发酵机制
+
+群体心理变化
+
+🛠 技术栈
+
+Python
+
+PyTorch
+
+HuggingFace Transformers
+
+Pandas / NumPy
+
+CSV 结构化舆情数据库
+
+CUDA GPU 加速支持
+
+支持 CPU 与 GPU 运行环境。
+
+📂 数据格式
+
+输入：
+
+comments.csv
+
+
+包含字段：
+
+content（评论内容）
+
+time（时间）
+
+ip_location（IP地区）
+
+topic（话题）
+
+输出：
+
+comments_nlp.csv
+
+
+新增字段：
+
+stance_label（立场）
+
+emotion_score（情绪分值）
+
+confidence（置信度）
+
+processed_text（清洗后文本）
+
+📈 应用场景
+
+该系统可用于：
+
+社会舆情监测
+
+品牌舆论分析
+
+公共事件追踪
+
+政策反馈分析
+
+媒体与传播研究
+
+社交平台内容洞察
+
+🧪 学术价值
+
+XHS-Stance 融合了：
+
+自然语言处理（NLP）
+
+社会计算（Social Computing）
+
+舆情分析（Opinion Mining）
+
+公共情绪建模（Public Sentiment Modeling）
+
+将分散的评论转化为
+可量化、可分析、可追踪的社会信号。
+
+📜 许可说明
+
+本项目用于 科研与教学用途。
+如需商业使用，请联系作者授权。
+
+✨ 作者
+
+刘奕康
+计算机专业考研方向
+研究兴趣：
+社交媒体分析 · 深度学习 · 舆情与社会计算
